@@ -16,7 +16,7 @@ function VansList() {
 
   return (
     <div className='van-list-container'>
-      <h1>Explore our van options</h1>
+      <h1 className='vans-list-title'>Explore our van options</h1>
       <ul className='van-list'>
         {vans.map((van) => (
           <VanItem van={van} key={van.id} />

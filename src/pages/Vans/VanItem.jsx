@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 function VanItem({ van }) {
   return (
-    <li>
-      <Link to={`/vans/${van.id}`} key={van.id} className='van-tile'>
+    <li className='van-tile'>
+      <Link to={`/vans/${van.id}`} key={van.id}>
         <img src={van.imageUrl} />
         <div className='van-info'>
           <h3>{van.name}</h3>

@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   color: unset;
 }
 
@@ -38,7 +38,7 @@ header {
   height: 110px;
   display: flex;
   align-items: center;
-  padding-block: 10px;
+  /* padding-block: 10px; */
 }
 
 header .site-logo {
@@ -46,26 +46,22 @@ header .site-logo {
   margin-right: auto;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 25px;
+  font-size: 2.5rem;
 }
 
 header a {
   text-decoration: none;
   color: #4d4d4d;
   font-weight: 600;
-  padding: 5px 20px;
+  padding: 0.5rem 2rem;
 }
 
 header a:hover {
-  color: #161616;
   color: #ff8c38;
-  /* text-decoration: underline; */
 }
 
 nav > a.active-link {
   font-weight: bold;
-  /* text-decoration: underline; */
-  color: #161616;
   color: #ff8c38;
 }
 
@@ -84,7 +80,7 @@ nav {
 }
 
 main {
-  margin-bottom: 84px;
+  margin-bottom: 8.4rem;
 }
 
 footer {
@@ -147,13 +143,9 @@ footer {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
-    url('../assets/images/home-hero.png') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; */
+
   background-size: cover;
-  min-height: 35rem;
+  /* min-height: 35rem; */
   /* min-height: 100vh; */
   height: calc(100vh - 17rem);
   color: white;
@@ -195,16 +187,21 @@ footer {
 /** ABOUT PAGE **/
 /****************/
 
-.about-hero-image {
+/* .about-hero-image {
   max-width: 100%;
-}
+} */
 
 .about-page-container {
   margin-bottom: 2.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-page-content {
-  padding-inline: 23px;
+  max-width: 70%;
+  /* padding-inline: 23px; */
   color: #161616;
   margin-bottom: 5rem;
 }
@@ -218,6 +215,7 @@ footer {
 }
 
 .about-page-cta {
+  width: 70%;
   background-color: #ffcc8d;
   color: #161616;
   padding-inline: 32px;
@@ -245,7 +243,10 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding-inline: 2.3rem; */
+  padding-inline: 2.3rem;
+}
+.vans-list-title {
+  margin-right: auto;
 }
 
 .van-list-filter-buttons {
@@ -258,12 +259,14 @@ footer {
 }
 
 .van-list {
+  /* width: 50rem; */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  /* justify-items: center; */
   gap: 3.4rem;
-  /* margin-top: 5.6rem; */
+  margin-top: 5.6rem;
   list-style: none;
+  padding: 0 4rem;
 }
 
 .van-tile a {
