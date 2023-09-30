@@ -13,11 +13,11 @@ import AppLayout from './components/AppLayout';
 import Home from './pages/Home';
 import About from './pages/About';
 
-import VansList, { loader as vansLoader } from './pages/vans/VansList';
+import VansList, { loader as vansLoader } from './pages/Vans/VansList';
 import VanDetails, {
   loader as vanDetailsLoader,
-} from './pages/vans/VanDetails';
-import Error from './pages/vans/Error';
+} from './pages/Vans/VanDetails';
+import Error from './pages/Vans/Error';
 
 import HostLayout from './components/HostLayout';
 import Dashboard from './pages/host/Dashboard';
