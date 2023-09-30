@@ -4,7 +4,9 @@ function HostVanItem({ van }) {
   return (
     <li className=''>
       <Link
-        to={`/host/vans/${van.id}`}
+        // to={`/host/vans/${van.id}`} // absolute path --no need
+        // to={`${van.id}`} // relative path --better
+        to={van.id} // relative path --better
         key={van.id}
         className='host-van-link-wrapper '
       >

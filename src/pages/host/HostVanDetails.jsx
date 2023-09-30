@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react';
-import { Link, useParams, Outlet, NavLink } from 'react-router-dom';
+import { Link, Outlet, useLoaderData, useRouteError } from 'react-router-dom';
 import HostVanDetailNav from './HostVanDetailNav';
+import { fetchHostVans } from '../../api';
+
+export function loader({ params }) {
+  // console.log('paramsId ', params);
+  return fetchHostVans(params.id);
+}
 
 function HostVanDetails() {
-  const { id } = useParams();
-  const [currentVan, setcurrentVan] = useState(null);
+  // const { id } = useParams();
+  const currentVan = useLoaderData();
+  const error = useRouteError();
 
-  useEffect(() => {
-    const fetchVanDetails = async () => {
-      const res = await fetch(`/api/host/vans/${id}`);
-      const data = await res.json();
-      console.log(data.vans);
-      setcurrentVan(data.vans);
-    };
-    fetchVanDetails();
-  }, [id]);
+  if (error) {
+    return <p>An unexpected error has occurred : {error.message}</p>;
+  }
 
   return (
     <div>
@@ -31,28 +31,24 @@ function HostVanDetails() {
         &larr; Back to all vans
       </Link>
       <div className='host-van-detail-layout-container'>
-        {currentVan ? (
-          <>
-            <div className='host-van-detail'>
-              <img src={currentVan.imageUrl} />
-              <div className='host-van-detail-info-text'>
-                <i className={`van-type ${currentVan.type} selected`}>
-                  {currentVan.type}
-                </i>
-                <h2>{currentVan.name}</h2>
-                <p className='van-price'>
-                  <span>${currentVan.price}</span>/day
-                </p>
-              </div>
+        <>
+          <div className='host-van-detail'>
+            <img src={currentVan.imageUrl} />
+            <div className='host-van-detail-info-text'>
+              <i className={`van-type ${currentVan.type} selected`}>
+                {currentVan.type}
+              </i>
+              <h2>{currentVan.name}</h2>
+              <p className='van-price'>
+                <span>${currentVan.price}</span>/day
+              </p>
             </div>
+          </div>
 
-            <HostVanDetailNav />
+          <HostVanDetailNav />
 
-            <Outlet context={{ currentVan }} />
-          </>
-        ) : (
-          <h2>Loading...</h2>
-        )}
+          <Outlet context={{ currentVan }} />
+        </>
       </div>
     </div>
   );

@@ -1,29 +1,55 @@
+import { useEffect, useState } from 'react';
 import VanItem from './VanItem';
-import {
-  useSearchParams,
-  useLoaderData,
-  useRouteError,
-} from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { fetchVans } from '../../api';
-
-export function loader() {
-  return fetchVans();
-}
 
 function VansList() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [vans, setVans] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   // console.log(searchParams.toString()); // type=simple |  type=luxury |  type=rugged
+  console.log(vans);
+
   const typeFilter = searchParams.get('type');
   // console.log(typeFilter); //  simple | luxury | rugged
 
-  const vans = useLoaderData();
-  console.log('from loader ', vans);
+  // useEffect(() => {
+  //   async function fetchVans() {
+  //     const res = await fetch('api/vans');
+  //     const data = await res.json();
+  //     // console.log(data);
+  //     setVans(data.vans);
+  //   }
+  //   fetchVans();
+  // }, []);
 
-  const error = useRouteError();
+  // REFACTORED - fetchVans moved to api
+  useEffect(() => {
+    async function getVans() {
+      setLoading(true);
+      try {
+        const data = await fetchVans();
+        // console.log(data);
+        setVans(data);
+      } catch (error) {
+        console.log('An unexpected error has occurred (from catch block)');
+        // console.log(error);
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getVans();
+  }, []);
 
   const displayedVans = typeFilter
     ? vans.filter((van) => van.type === typeFilter)
     : vans;
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
   if (error) {
     return <p>An unexpected error has occurred : {error.message}</p>;

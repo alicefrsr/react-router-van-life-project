@@ -15,8 +15,8 @@ body {
 }
 
 a {
-  /* text-decoration: underline; */
-  color: unset;
+  text-decoration: none;
+  /* color: unset; */
 }
 
 body::-webkit-scrollbar {
@@ -38,31 +38,8 @@ header {
   height: 110px;
   display: flex;
   align-items: center;
+  padding: 3rem;
   /* padding-block: 10px; */
-}
-
-header .site-logo {
-  color: black;
-  margin-right: auto;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 2.5rem;
-}
-
-header a {
-  text-decoration: none;
-  color: #4d4d4d;
-  font-weight: 600;
-  padding: 0.5rem 2rem;
-}
-
-header a:hover {
-  color: #ff8c38;
-}
-
-nav > a.active-link {
-  font-weight: bold;
-  color: #ff8c38;
 }
 
 header .login-icon {
@@ -128,6 +105,76 @@ footer {
 .link-button:hover {
   transform: translate(1px, 1px);
 }
+/**************/
+/** MAIN NAV **/
+/**************/
+
+.site-logo {
+  color: black;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.site-logo:hover {
+  color: #ff8c38;
+  color: #115e59;
+}
+
+.main-nav {
+  gap: 3rem;
+  /* padding: 3rem; */
+}
+
+.main-nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #4d4d4d;
+  font-weight: 600;
+  padding: 0.5rem 0;
+}
+
+.main-nav a:hover {
+  color: #ff8c38;
+  color: #115e59;
+}
+
+.main-nav > a.active-link {
+  font-weight: bold;
+  color: #115e59;
+  /* text-decoration: underline; */
+  border-bottom: 2px solid #115e59;
+}
+
+/**************/
+/** HOST NAV **/
+/**************/
+
+.host-nav {
+  gap: 2rem;
+  padding: 0 3rem;
+  margin-bottom: 3rem;
+}
+
+.host-nav a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 700;
+  /* padding: 5px 2rem; */
+}
+
+.host-nav a:hover {
+  color: #115e59;
+  color: #ff8c38;
+  /* font-weight: 600; */
+}
+
+/* .host-nav > a.active-link {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #115e59;
+} */
 
 /***************/
 /** HOME PAGE **/
@@ -245,19 +292,25 @@ footer {
   align-items: center;
   padding-inline: 2.3rem;
 }
+
 .vans-list-title {
   margin-right: auto;
 }
 
+/*** VAN filters ***/
+
 .van-list-filter-buttons {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .van-list-filter-buttons > a {
   margin-right: 15px;
 }
 
+/* ************ */
 .van-list {
   /* width: 50rem; */
   display: grid;
@@ -286,14 +339,15 @@ footer {
 }
 
 .van-type {
-  height: 34px;
-  padding: 6px 26px;
+  height: 3.5rem;
+  background-color: #ffead0;
+  color: #4d4d4d;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 500;
   border: none;
   border-radius: 5px;
-  background-color: #ffead0;
-  color: #4d4d4d;
+  padding: 0.6rem 2.6rem;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -325,14 +379,18 @@ footer {
 }
 
 .van-type.clear-filters {
-  margin-left: -20px;
-  height: 34px;
-  padding: 6px 26px;
+  /* margin-left: -20px; */
+  /* height: 34px; */
+  /* padding: 6px 26px; */
   font-style: normal;
   font-weight: 500;
-  border: none;
+  border: 1px solid #4d4d4d;
   border-radius: 5px;
-  text-decoration: underline;
+  background-color: transparent;
+  /* color: #4d4d4d; */
+}
+.van-type.clear-filters:hover,
+.van-type.clear-filters.selected {
   background-color: transparent;
   color: #4d4d4d;
 }
@@ -399,24 +457,6 @@ i[class*='van-type-'] {
 /* ////////////*/
 /* /// HOST ///*/
 /* //////////// */
-
-.host-nav {
-  display: flex;
-  margin-bottom: 30px;
-}
-
-.host-nav a {
-  text-decoration: none;
-  color: #4d4d4d;
-  font-weight: 500;
-  padding: 5px 2rem;
-}
-
-.host-nav a:hover {
-  color: #161616;
-  text-decoration: underline;
-  font-weight: 600;
-}
 
 .host-van-link-wrapper {
   color: unset;
@@ -497,21 +537,23 @@ i[class*='van-type-'] {
 .host-van-detail-nav a {
   text-decoration: none;
   color: #4d4d4d;
-  font-weight: 500;
+  font-weight: 700;
+
   padding: 5px 20px;
 }
 
 .host-van-detail-nav a:first-of-type {
-  text-decoration: none;
+  /* text-decoration: none;
   color: #4d4d4d;
-  font-weight: 500;
+  font-weight: 700; */
   padding: 5px 15px;
   margin-left: -15px;
 }
 
 .host-van-detail-nav a:hover {
   color: #161616;
-  text-decoration: underline;
+  color: #ff8c38;
+  /* text-decoration: underline; */
   font-weight: 700;
 }
 

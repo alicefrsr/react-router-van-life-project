@@ -1,31 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useLoaderData, useRouteError } from 'react-router-dom';
 import HostVanItem from './HostVanItem';
 
-function HostVans() {
-  const [hostVans, setHostVans] = useState(null);
+import { fetchHostVans } from '../../api';
 
-  useEffect(() => {
-    const fetchHostVans = async () => {
-      const res = await fetch(`/api/host/vans`);
-      const data = await res.json();
-      console.log(data.vans);
-      setHostVans(data.vans);
-    };
-    fetchHostVans();
-  }, []);
+export function loader() {
+  return fetchHostVans();
+}
+
+function HostVans() {
+  const hostVans = useLoaderData();
+  const error = useRouteError();
+
+  if (error) {
+    return <p>An unexpected error has occurred : {error.message}</p>;
+  }
 
   return (
     <div className='host-van-info'>
       <h2 className='host-vans-title'>Your listed vans</h2>
-      {hostVans ? (
-        <ul className='host-vans-list'>
-          {hostVans.map((van) => (
-            <HostVanItem van={van} key={van.id} />
-          ))}
-        </ul>
-      ) : (
-        <p>...Loading</p>
-      )}
+      <ul className='host-vans-list'>
+        {hostVans.map((van) => (
+          <HostVanItem van={van} key={van.id} />
+        ))}
+      </ul>
     </div>
   );
 }

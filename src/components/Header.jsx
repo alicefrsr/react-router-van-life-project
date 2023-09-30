@@ -10,14 +10,7 @@ function Header() {
       <Link to='/' className='site-logo'>
         #VANLIFE
       </Link>
-      <nav>
-        <NavLink
-          to='/host'
-          className={({ isActive }) => (isActive ? 'active-link' : null)}
-          // style={({ isActive }) => (isActive ? activeStyle : null)}
-        >
-          Hosts
-        </NavLink>
+      <nav className='main-nav'>
         <NavLink
           to='/about'
           className={({ isActive }) => (isActive ? 'active-link' : null)}
@@ -31,6 +24,13 @@ function Header() {
           // style={({ isActive }) => (isActive ? activeStyle : null)}
         >
           Vans
+        </NavLink>
+        <NavLink
+          to='/host'
+          className={({ isActive }) => (isActive ? 'active-link' : null)}
+          // style={({ isActive }) => (isActive ? activeStyle : null)}
+        >
+          Hosts
         </NavLink>
       </nav>
     </header>
