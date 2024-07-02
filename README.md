@@ -2,17 +2,27 @@
 
 ## Introduction
 
-Simple app/exercise built to learn about **React Router 6**, for client-side
-routing, following Bob Ziroll's Advanced React course on Scrimba. I later
-applied everything I learned on my own project
-[Bits&Bobs](https://bits-and-bobs.netlify.app). Topics covered:
+Simple app built to learn about **React Router 6**, for client-side routing,
+following Bob Ziroll's Advanced React course on Scrimba. I later applied what I
+learned on my own project [Bits&Bobs](https://bits-and-bobs.netlify.app) and
+many more.
+
+I've split the project in 2 repos to keep 2 different ways of doing the same
+thing. **This one includes Part 2's topics**.
+
+Topics covered - Part 1:
 
 - Routing basics
 - Navigation
 - Layout and Index routes
 - Nested routes
 - Route and search params
-- Protected routes
+
+Topics covered - Part 2:
+
+- Loaders
+- Actions
+- Protected Routes
 
 ## Functionalities
 
@@ -23,6 +33,19 @@ Single Page App with 10+ routes, features include:
 - nested routes multiple levels deep
 - using a real database (Firebase)
 - deployed on Netlify
+
+## References
+
+You can find the current state of this demo here:
+[Van Life](https://heroic-blancmange-263065.netlify.app/).
+
+The repo for the entire Scrimba course:
+https://github.com/scrimba/learn-react-router-6
+
+The Scrimba course: https://v2.scrimba.com/learn-react-router-6-c06
+
+The youtube version of the Scrimba course:
+https://www.youtube.com/watch?v=nDGA3km5He4&t=112s
 
 ## Setup
 

@@ -1,5 +1,5 @@
 import {
-  // BrowserRouter, // does not handle the loaders API
+  // BrowserRouter, // does not handle the loaders  that comes with RR 6.4
   RouterProvider, // new, instead of BrowserRouter, pass in router made with createBrowserRouter
   createBrowserRouter, // new
   // Routes, // not needed
