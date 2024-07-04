@@ -24,8 +24,8 @@ function HostVanDetails() {
       <Link
         to='..'
         className='back-button'
-        relative='path'
-        // up a level in our path structure, not in our routes hierarchy
+        relative='path' // without it, goes to /host
+        // up a level in our path structure, NOT in our routes hierarchy
       >
         {' '}
         &larr; Back to all vans

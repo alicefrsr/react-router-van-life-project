@@ -51,22 +51,26 @@ const router = createBrowserRouter(
         element={<VanDetails />}
         loader={vanDetailsLoader}
       />
-
+      {/* nesting within host route: /income, /vans, /reviews */}
       <Route path='host' element={<HostLayout />}>
         <Route index element={<Dashboard />} />
         <Route path='income' element={<Income />} />
         <Route path='vans' element={<HostVansList />} loader={hostVansLoader} />
+
         <Route
           path='vans/:id'
           element={<HostVanDetails />}
           loader={hostVanDetailsLoader}
         >
+          {/* sub-nesting within /vans/:id route: /pricing, 'photos */}
           <Route index element={<HostVanInfo />} />
           <Route path='pricing' element={<HostVanPricing />} />
           <Route path='photos' element={<HostVanPhotos />} />
         </Route>
+        {/* - */}
         <Route path='reviews' element={<Reviews />} />
       </Route>
+      {/* catch all routes --last */}
       <Route path='*' element={<NotFound />} />
     </Route>
   )

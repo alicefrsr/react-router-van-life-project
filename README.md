@@ -14,8 +14,8 @@ Topics covered - Part 1:
 
 - Routing basics
 - Navigation
-- Layout and Index routes
-- Nested routes
+- Layout and Index routes, relative vs absolute paths
+- Nested routes, useOutletContext()
 - Route and search params
 
 Topics covered - Part 2:

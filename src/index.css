@@ -119,7 +119,7 @@ footer {
 
 .site-logo:hover {
   color: #ff8c38;
-  color: #115e59;
+  /* color: #115e59; */
 }
 
 .main-nav {
@@ -137,44 +137,92 @@ footer {
 
 .main-nav a:hover {
   color: #ff8c38;
-  color: #115e59;
+  /* color: #115e59; */
 }
 
 .main-nav > a.active-link {
-  font-weight: bold;
-  color: #115e59;
+  /* font-weight: bold; */
+  /* color: #115e59; */
+  color: #ff8c38;
   /* text-decoration: underline; */
   border-bottom: 2px solid #115e59;
+  border-bottom: 2px solid #ff8c38;
 }
 
 /**************/
-/** HOST NAV **/
+/** HOST (SECONDARY) NAV **/
 /**************/
 
 .host-nav {
-  gap: 2rem;
-  padding: 0 3rem;
-  margin-bottom: 3rem;
+  gap: 3rem;
+  display: flex;
+  padding: 3rem;
+  list-style: none;
 }
 
 .host-nav a {
   text-decoration: none;
+  text-transform: uppercase;
   color: #4d4d4d;
-  font-weight: 700;
-  /* padding: 5px 2rem; */
+  font-weight: 600;
+  padding: 0.5rem 0;
 }
 
 .host-nav a:hover {
-  color: #115e59;
   color: #ff8c38;
+  color: #115e59;
   /* font-weight: 600; */
 }
 
-/* .host-nav > a.active-link {
-  text-decoration: underline;
+.host-nav > a.active-link {
+  /* text-decoration: underline; */
   font-weight: bold;
   color: #115e59;
-} */
+  border-bottom: 2px solid #115e59;
+}
+
+/**************/
+/** HOST/VAN/:ID (third level NAV) **/
+/**************/
+
+.host-van-detail-nav {
+  display: flex;
+  margin-block: 25px;
+}
+
+.host-van-detail-nav a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 700;
+
+  padding: 5px 20px;
+}
+
+.host-van-detail-nav a:first-of-type {
+  color: #4d4d4d;
+
+  padding: 5px 15px;
+  margin-left: -15px;
+}
+
+.host-van-detail-nav a:hover {
+  color: #161616;
+  color: #ff8c38;
+  /* text-decoration: underline; */
+  font-weight: 700;
+}
+
+.host-van-detail-nav a:hover {
+  color: #161616;
+  color: #ff8c38;
+  /* text-decoration: underline; */
+  font-weight: 700;
+}
+.host-van-detail-nav > a.active-link {
+  /* color: #115e59; */
+  color: #ff8c38;
+  border-bottom: 2px solid #ff8c38;
+}
 
 /***************/
 /** HOME PAGE **/
@@ -455,9 +503,6 @@ i[class*='van-type-'] {
 }
 
 /* ////////////*/
-/* /// HOST ///*/
-/* //////////// */
-
 .host-van-link-wrapper {
   color: unset;
   text-decoration: unset;
@@ -527,34 +572,6 @@ i[class*='van-type-'] {
 .host-van-detail-info-text > h4 {
   font-size: 20px;
   margin-block: 0;
-}
-
-.host-van-detail-nav {
-  display: flex;
-  margin-block: 25px;
-}
-
-.host-van-detail-nav a {
-  text-decoration: none;
-  color: #4d4d4d;
-  font-weight: 700;
-
-  padding: 5px 20px;
-}
-
-.host-van-detail-nav a:first-of-type {
-  /* text-decoration: none;
-  color: #4d4d4d;
-  font-weight: 700; */
-  padding: 5px 15px;
-  margin-left: -15px;
-}
-
-.host-van-detail-nav a:hover {
-  color: #161616;
-  color: #ff8c38;
-  /* text-decoration: underline; */
-  font-weight: 700;
 }
 
 .host-van-detail-info > h4 {
