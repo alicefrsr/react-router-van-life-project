@@ -9,6 +9,7 @@ function VanItem({ van, typeFilter, searchParams }) {
         // to={`/vans/${van.id}`} // absolute path -- works but no need
         // to={`${van.id}`} // relative path. AND in our case 'id' is already a string so...
         to={van.id} // <-- ...happens to work here.
+        aria-label={`View details for ${van.name} priced at ${van.price} euros per day`}
         // state={{ type: typeFilter }} // to pass in the 'filter' state with the link
         state={{
           filtersInUrlState: `?${searchParams.toString()}`,

@@ -33,7 +33,7 @@ function VansList() {
         // console.log(data);
         setVans(data);
       } catch (error) {
-        console.log('An unexpected error has occurred (from catch block)');
+        // console.log('An unexpected error has occurred (from catch block)');
         // console.log(error);
         setError(error);
       } finally {
@@ -48,11 +48,15 @@ function VansList() {
     : vans;
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <h1 aria-live='polite'>Loading...</h1>;
   }
 
   if (error) {
-    return <p>An unexpected error has occurred : {error.message}</p>;
+    return (
+      <h1 aria-live='assertive'>
+        An unexpected error has occurred : {error.message}
+      </h1>
+    );
   }
 
   return (

@@ -70,7 +70,7 @@ const router = createBrowserRouter(
         {/* - */}
         <Route path='reviews' element={<Reviews />} />
       </Route>
-      {/* catch all routes --last */}
+      {/* splat / catch all route */}
       <Route path='*' element={<NotFound />} />
     </Route>
   )

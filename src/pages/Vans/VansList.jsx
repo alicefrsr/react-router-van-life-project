@@ -21,7 +21,7 @@ function VansList() {
 
   const error = useRouteError();
 
-  const displayedVans = typeFilter
+  const filteredVans = typeFilter
     ? vans.filter((van) => van.type === typeFilter)
     : vans;
 
@@ -34,16 +34,7 @@ function VansList() {
       <h1 className='vans-list-title'>Explore our van options</h1>
       <div className='van-list-filter-buttons'>
         <span>Filters:</span>
-        {typeFilter !== null && (
-          <button
-            className='van-type clear-filters'
-            // onClick={() => setSearchParams('')} // works
-            // onClick={() => setSearchParams('.')} // works
-            onClick={() => setSearchParams({})} // more commonly we'll pass in an object
-          >
-            Show all
-          </button>
-        )}
+
         <button
           className={`van-type simple ${
             typeFilter === 'simple' ? 'selected' : ''
@@ -71,9 +62,19 @@ function VansList() {
         >
           Rugged
         </button>
+        {typeFilter !== null && (
+          <button
+            className='van-type clear-filters'
+            // onClick={() => setSearchParams('')} // works
+            // onClick={() => setSearchParams('.')} // works // will go to current path
+            onClick={() => setSearchParams({})} // more commonly we'll pass in an object
+          >
+            Show all
+          </button>
+        )}
       </div>
       <ul className='van-list'>
-        {displayedVans.map((van) => (
+        {filteredVans.map((van) => (
           <VanItem
             van={van}
             key={van.id}

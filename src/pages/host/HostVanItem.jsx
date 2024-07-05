@@ -8,6 +8,7 @@ function HostVanItem({ van }) {
         // to={`${van.id}`} // relative path --better
         to={van.id} // relative path --better
         key={van.id}
+        aria-label={`View details for ${van.name} priced at ${van.price} euros per day`}
         className='host-van-link-wrapper '
       >
         <div className='host-van-single'>

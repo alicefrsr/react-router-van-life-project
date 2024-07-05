@@ -15,10 +15,10 @@ function VanDetails() {
   const filtersInUrlState = location.state?.filtersInUrlState || ''; // ? = app doesn't break if no state is passsed through link
   // to access selected filter:
   // console.log(appliedFilters); // nothing | type=simple |  type=luxury |  type=rugged
-  // const filterType = appliedFilters.slice(5); // chop off 'type=' : index 0-4
+  // const type = appliedFilters.slice(5); // chop off 'type=' : index 0-4
 
   // OR (better) pass in the type is urlState
-  const filterType = location.state.type || 'all';
+  const type = location.state.type || 'all';
 
   // useEffect(() => {
   //   const fetchVanDetails = async () => {
@@ -67,7 +67,7 @@ function VanDetails() {
           // to={'/vans'} // will ignore our filters
         >
           {' '}
-          &larr; Back to {filterType} vans
+          &larr; Back to {type} vans
         </Link>
       }
       {vanDetails ? (

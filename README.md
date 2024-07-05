@@ -3,12 +3,11 @@
 ## Introduction
 
 Simple app built to learn about **React Router 6**, for client-side routing,
-following Bob Ziroll's Advanced React course on Scrimba. I later applied what I
-learned on my own project [Bits&Bobs](https://bits-and-bobs.netlify.app) and
-many more.
-
-I've split the project in 2 repos to keep 2 different ways of doing the same
-thing. **This one includes Part 2's topics**.
+following Bob Ziroll's Advanced React course on Scrimba, an awesome interactive
+tutorial with a ton of practice exercises, and certainly the most comprehensive
+there is out there. I later applied what I learned on my own project
+[Bits&Bobs](https://bits-and-bobs.netlify.app) and a few others. It's still WIP
+as I keep getting distracted by learning and building other things.
 
 Topics covered - Part 1:
 
@@ -16,13 +15,17 @@ Topics covered - Part 1:
 - Navigation
 - Layout and Index routes, relative vs absolute paths
 - Nested routes, useOutletContext()
-- Route and search params
+- Route and search/query params
+- Coding 'happy path' vs 'sad path' (error handling, loading states, form
+  validation etc)
 
-Topics covered - Part 2:
+Topics covered - Part 2: v6.4 -> Data Layer APIs
 
 - Loaders
+- Errors
 - Actions
 - Protected Routes
+- Deferred data
 
 ## Functionalities
 
@@ -31,6 +34,7 @@ Single Page App with 10+ routes, features include:
 - filter by van type
 - active nav link styling
 - nested routes multiple levels deep
+- using a mock server to start with, to fake data fetching (Mirage.js)
 - using a real database (Firebase)
 - deployed on Netlify
 
